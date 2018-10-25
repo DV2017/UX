@@ -7,7 +7,7 @@
 //NOTE: insert password
 //NOTE: change write permissions for this specific folder (root folder permissions need not be changed)
 
-    $con = mysqli_connect("localhost", "root", "C1RT4Nmysql", "upload") or die("Cannot connect");
+    $con = mysqli_connect("localhost", "user", "pass", "dbname") or die("Cannot connect");
 
     if(isset($_POST['btn-upload'])) {
 
