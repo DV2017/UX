@@ -1,6 +1,0 @@
-https://www.amazonbookreview.com
-for good clean simple layout
-
-https://github.com/daneden/animate.css
-for good easy animation styling
-
