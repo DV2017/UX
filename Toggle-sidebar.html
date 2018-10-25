@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-3.2.1.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("input").click(function(){
+            $("#A").fadeToggle("slow");
+        });    
+    });  
+</script>
+
+<style>
+    html, body{
+        margin: 0;
+        padding: 0;
+        border:0;
+    }
+#A, #B {
+    position: absolute;
+}
+#A {
+    top: 0;
+    left: 10%;
+    width: 200px;
+    bottom:0;
+    background: salmon;
+    z-index: 1;
+    display: none;
+}
+#B {
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: green;
+}
+input.button {
+    height:50px;
+    position: absolute;
+    top: 40%;
+}
+
+</style>
+
+
+</head>
+<body>
+    <div id="A"></div>
+    <div id="B">  
+        <input class="button" type="image" src="assets/icons/blog.png" /> 
+    </div>
+  
+
+
+
+
+</body>
+</html>

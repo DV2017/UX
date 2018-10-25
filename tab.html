@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--https://cssjockey.com/an-easy-way-to-create-tabbed-content-with-jquery-css/-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tab with css and jquery</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+    .banner{
+        width: 100%;
+        margin:0;
+        padding:0;
+    }
+    .banner img{
+        max-width: 100%;
+        object-fit: cover;
+        position: relative;
+    }
+    .tab-container{
+        max-width: 100%;
+        background: #fff;
+    }
+    ul.tabs{
+        list-style: none;
+        margin:0;
+        padding:0;
+    }
+    ul.tabs li{
+        display: inline-block;
+        padding: 10px;
+        color: #222;
+        cursor: pointer;
+    }
+    ul.tabs li.current{
+        background: #ededed;
+        color: #222;
+        border-bottom: 2px solid red;
+    }
+    .tab-content{
+        background:#ededed;
+        padding: 15px;
+        display: none;
+    }
+    .tab-content.current{
+        display: inherit;
+        /* will show current div*/
+    }
+    .box{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .left-box{
+        width: 50%;
+        margin: 5px;
+    }
+    .right-box{
+        width: 50%;
+        margin: 5px;
+    }
+    #map {
+        height: 500px;
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 900px){
+        ul.tabs li{
+            display: block;
+            width: 100%;
+            font-size: 14px;
+        }
+        .box{
+            display: block;
+        }
+        .box .left-box, .box .right-box {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <img src="assets/images/flower-maki-mack1900x700.jpeg" alt="">
+    </div>
+    <div class="tab-container">
+        <ul class="tabs">
+            <li class="tab-link current" data-tab="tab-1">Tab One</li>
+            <li class="tab-link" data-tab="tab-2">Tab Two</li>
+            <li class="tab-link" data-tab="tab-3">Tab Three</li>
+            <li class="tab-link" data-tab="tab-4">Tab Four</li>
+        </ul>
+
+        <div id="tab-1" class="tab-content current">
+            <div class="box">
+                <div class="left-box">
+                    <h3>Some text goes here</h3>
+                    De laatste tijd zie ik elke dag wel nieuws over de natuur, in de krant, op tv, op Twitter of Facebook. In 2016 verscheen daar de otter voor een wildcamera onder één van onze mooiste faunapassages bij Ankeveen – Naardermeer. De vlinderstichting opent trots een vlinderidylle, een mooi ingericht grasland voor vlinders, bijen en hommels. En soms hebben we ook last van de natuur, zoals de ‘terror-oehoe’ in Purmerend die de gemoederen lang bezig hield. Maar uit alle nieuwsberichten spreekt een enorme betrokkenheid: natuur lééft onder Noord Hollanders.
+                </div>
+                <div class="right-box">
+                    <h3>Google Map Demo</h3>
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+        <div id="tab-2" class="tab-content">
+            De neergang lijkt weliswaar gestopt, maar van de oorspronkelijke biodiversiteit is nog maar 15% aanwezig. Hoewel we die natuurlijke situatie van de jaren 1700 niet zullen nastreven zou mijn wens toch zijn de trend om te gaan buigen naar groei. Er zijn al een paar mooie successen geboekt . De otter is weer terug, de das is inmiddels een vaste inwoner van de provincie en we zien steeds meer lepelaars. Maar hiermee zijn we er nog niet. We gaan onverminderd door met het aanleggen van het Natuurnetwerk, met het investeren in onze natuurgebieden, en met het beschermen van biodiversiteit buiten de ‘klassieke’ natuurgebieden, zoals in het agrarisch landschap en in dorpen en steden. Dat doen we niet alleen. U kunt ons hierbij helpen,bijvoorbeeld door u aan te melden als vrijwilliger bij een natuurbeheerder. Daarmee helpt u mee aan het beheer, kunt u uw kennis delen over bijzondere natuur, of kunt u meedoen aan het natuuronderzoek in onze provincie. Hoe meer Noord Hollanders er op uit trekken om te zien hoe de natuur erbij staat, hoe beter wij in staat zijn de kwaliteit te kunnen volgen!
+        </div>
+        <div id="tab-3" class="tab-content">
+            Om die reden wordt nu gewerkt aan de ontwikkeling van een compleet monitoringsprogramma waarin de verschillende aspecten van de natuur gemonitord kunnen worden. De resultaten van de monitoring zullen leiden tot nieuwe inzichten, en helpen om zowel beleid als beheer te verbeteren.
+        </div>
+        <div id="tab-4" class="tab-content">
+            Alle reden dus om te willen weten hoe het nu met de Noord- Hollandse natuur gaat. De provincie ontwikkelt hiervoor een monitoringprogramma. Voor alle gebieden waarvoor de provincie subsidie natuur en landschapsbeheer (SNL) geeft wordt ook een monitor vergoeding beschikbaar gesteld. Op deze manier verzekert de provincie zich van gegevens over de natuurkwaliteit op die terreinen. Daarnaast wordt voor N2000 en PAS een aantal aanvullende monitoringactiviteiten uitgewerkt zodat we de doelstellingen voor die gebieden goed kunnen monitoren.
+        </div>
+    </div><!--container -->
+
+<script>
+    $(document).ready(function(){
+        $("ul.tabs li").on("click", function(){
+            var tab_id = $(this).attr("data-tab");
+            $("ul.tabs li").removeClass("current");
+            $(".tab-content").removeClass("current");
+            $(this).addClass("current");
+            $("#"+tab_id).addClass("current");
+        });
+    });
+</script>
+
+<script>
+    function initMap() {        
+        var urluuAustralia = {lat: -28.024, lng: 140.887};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 3,
+            center: urluuAustralia
+        });    
+        var marker = new google.maps.Marker({
+            position: urluuAustralia,
+            map: map,
+            title: "This map uses single marker"
+        });            
+    }            
+</script>        
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXCrUgHfsEMOiyU16L7TApW9GL-byoP7I&callback=initMap">
+</script>
+
+</body>
+</html>

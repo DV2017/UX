@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .doc-container{            
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        .flyers{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            width: 20%;
+            height: 25vh;
+
+            border: 1px solid #a0a0a0;
+            border-radius: 5px;
+            box-shadow: 0 0 3px #a0a0a0;
+        }
+        /*let height of image define width of .container*/
+        .flyers img{ 
+            width: 50%;         
+            object-fit: cover;
+        }
+        .flyers .doc-text {
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    
+    </style>
+</head>
+<body>
+    
+    <div class="doc-container">
+        <div class="flyers">
+            <img src="assets/docs/pdf-img/180516_BioBorder_brochure.jpg" alt="">
+            <div class="doc-text">
+                <h3>Heading goes here</h3>
+                <p>Descritive short text</p>
+            </div>      
+        </div>
+    </div>
+
+
+</body>
+</html>

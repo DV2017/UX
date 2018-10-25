@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Single marker Map</title>
+
+
+<style>
+        /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+    
+    <h3>Google Map Demo</h3>
+    <div id="map"></div>
+<script>
+function initMap() {
+    
+    var urluuAustralia = {lat: -28.024, lng: 140.887};
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 3,
+        center: urluuAustralia
+    });
+
+    var marker = new google.maps.Marker({
+        position: urluuAustralia,
+        map: map,
+        title: "This map uses single marker"
+    });    
+    
+}
+    
+</script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXCrUgHfsEMOiyU16L7TApW9GL-byoP7I&callback=initMap">
+    </script>
+
+</body>
+</html>

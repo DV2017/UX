@@ -1,0 +1,39 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f8cbcb;
+    position: relative;
+    z-index: -1;
+}
+.sidenav {
+    width: 15%;
+    height: 100%;
+    background-color: lightgrey;
+    display: block;
+    text-align: center;
+}
+span{
+    cursor: pointer;
+}
+span>img{
+    height: 40px;
+}
+span>p{
+    margin:0px;
+    padding-bottom: 7px;
+}
+
+.admin-content{
+    position: absolute;
+    width: 85%;
+    height: 100%;
+    top:0;
+    left: 100px;
+    background-color: #f8cbcb;
+}

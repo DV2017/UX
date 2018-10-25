@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'>    
+
+<style>
+    span {
+      top: .5em;
+      left: .5em;
+      position: fixed;
+      z-index: 9999;
+    }
+    button
+    {
+      background: none;
+      border: none;
+      outline: none;
+      position: absolute;
+      opacity: 0;
+      transition: transform .5s, opacity .3s ease-out;
+    }
+    #toggle:checked ~ .container > .deg5 {
+      transform: rotate(5deg) translate(2.5em) rotate(-5deg);
+    }
+
+    #toggle:checked ~ .container > .deg40 {
+      transform: rotate(40deg) translate(2.3em) rotate(-40deg);
+    }
+
+    #toggle:checked ~ .container > .deg85 {
+      transform: rotate(85deg) translate(2.5em) rotate(-85deg);
+    }
+
+    #toggle:checked ~ .container > button {
+      opacity: 1 ;
+      position: fixed;
+    }
+
+    #toggle:checked ~ .container > button {
+      opacity: 1 ;
+      position: fixed;
+    }
+
+    #toggle:checked ~ .container > button:hover {
+      cursor: pointer;
+    }
+
+    label:hover {
+      cursor: pointer;
+    }
+
+    #toggle {
+      display: none;
+    }
+
+    .fa-home:hover {
+      color: #55cc70;
+    }
+
+    .fa-comments:hover {
+      color: #0099e5;
+    }
+
+    .fa-heart:hover {
+      color: tomato;
+    }
+
+</style>
+
+</head>
+<body>
+    
+  <div>
+    <input type="checkbox" id="toggle">
+    <label for="toggle"><span class="fa fa-navicon fa-2x"></span></label>
+    <div class='container'>
+      <button class="fa fa-home fa-2x deg5"></button>
+      <button class="fa fa-comments fa-2x deg40"></button>
+      <button class="fa fa-heart fa-2x deg85"></button>
+    </div>
+  </div>
+      
+</body>
+</html>

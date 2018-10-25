@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slideshow - javascript</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+    .sliders {
+        position: relative;
+        width: 100%;
+        box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    .sliders img {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    </style>
+
+    <script>
+        //select images greater than (gt) 0
+        //hide all except the 1st image
+    $(function(){
+        $(".sliders > :gt(0)").hide();
+        //a setInterval to iterate through the images every few seconds
+        setInterval(function() { 
+            $(".sliders > :first-child").fadeOut(1000)
+                .next().fadeIn(1000)
+                .end().appendTo(".sliders")
+        }, 3000);
+    });
+    
+    
+    </script>
+</head>
+<body>
+<!--    https://snook.ca/archives/javascript/simplest-jquery-slideshow-->
+    <div class="sliders">
+        <img src="../Cover-center/dune.jpg" alt="" class="sliderClass">
+        <img src="../Cover-center/house.jpg" alt="" class="sliderClass">
+        <img src="../Cover-center/one.jpg" alt="" class="sliderClass">
+    </div>
+</body>
+</html>
